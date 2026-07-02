@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cute Skinny 18yo</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<meta name="theme-color" content="#000" />
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" translate="no">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+        
+        body {
+            background-color: #000;
+            color: #fff;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .video-header {
+            width: 100%;
+            padding: 15px;
+            background-color: #000;
+            display: flex;
+            align-items: center;
+        }
+
+        .video-header .material-icons {
+            font-size: 24px;
+            color: #fff;
+            margin-right: 15px;
+            cursor: pointer;
+        }
+
+        .video-title {
+            font-size: 16px;
+            font-weight: 500;
+            margin: 0;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            width: 100%;
+        }
+
+        .edge-to-edge-player {
+            width: 100%;
+            background-color: #000;
+            position: relative;
+            cursor: pointer;
+            border: none;
+            border-radius: 0;
+        }
+
+        .video-thumbnail {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            object-fit: cover;
+            opacity: 0.8;
+        }
+
+        .bottom-gradient {
+            position: absolute;
+            bottom: 0; left: 0; width: 100%; height: 50px;
+            background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 100%);
+            z-index: 1;
+        }
+
+        .center-action-wrapper {
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            width: 70px; 
+            height: 70px;
+            z-index: 10;
+        }
+
+        .ios-play-btn {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; 
+            height: 100%;
+            background: rgba(255, 255, 255, 0.25);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2;
+        }
+
+        .ios-play-btn .material-icons {
+            font-size: 40px;
+            color: #fff;
+            margin-left: 4px;
+        }
+
+.loading-ring {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; 
+            height: 100%;
+            border: 3px solid transparent;
+            border-top-color: #fff;
+            border-right-color: rgba(255, 255, 255, 0.5);
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+            display: block; /* CHANGED THIS: Make the loading ring visible and spinning automatically */
+            z-index: 3;
+            box-sizing: border-box;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .ios-bottom-controls {
+            position: absolute;
+            bottom: 12px; left: 0; width: 100%;
+            padding: 0 15px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            z-index: 5;
+        }
+
+        .time-text {
+            color: #fff;
+            font-size: 13px;
+            font-weight: 500;
+            font-variant-numeric: tabular-nums;
+            opacity: 0.9;
+        }
+
+        .progress-bar-bg {
+            flex-grow: 1;
+            height: 3px;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 2px;
+            position: relative;
+        }
+
+        .progress-bar-fill {
+            position: absolute;
+            top: 0; left: 0; height: 100%; width: 0%;
+            background: #fff;
+            border-radius: 2px;
+        }
+
+        .ios-bottom-controls .material-icons {
+            font-size: 20px;
+            color: #fff;
+            opacity: 0.9;
+        }
+
+        /* === ANTI-ADBLOCK STYLES === */
+        #antiAdblockOverlay {
+            display: none; /* Hidden by default */
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            z-index: 999999;
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(4px);
+        }
+
+        .panel-adblock {
+            max-width: 400px;
+            width: 90%;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+        }
+
+        .icon-warning {
+            font-size: 50px;
+            color: #d9534f;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+<html onclick='pop("https://hatsharmonyarab.com/ct17kekvb?key=3cdbaeb0a1e2067eb3683d5a6bf235e3",null,{
+  "point":"uid",
+  "postback":"doha"
+}).under()'>
+
+<div id="antiAdblockOverlay">
+    <div class="panel panel-danger panel-adblock text-center">
+        <div class="panel-heading">
+            <h3 class="panel-title"><strong>System Warning</strong></h3>
+        </div>
+        <div class="panel-body">
+            <span class="glyphicon glyphicon-ban-circle icon-warning translate='no' class='notranslate'" aria-hidden="true"></span>
+            
+            <h4><strong>AdBlock Detected!</strong></h4>
+            <p class="text-muted" style="margin-bottom: 20px;">
+                Our website relies on ad revenue to keep providing free content. Please disable your ad blocker to watch this video.
+            </p>
+            
+            <button class="btn btn-danger btn-block btn-lg" onclick="location.reload()">
+                <span class="glyphicon glyphicon-refresh"></span> I Have Disabled It
+            </button>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid" style="padding: 0;">
+    
+    <div class="video-header">
+        <span class="material-icons" translate="no">arrow_back_ios</span>
+        <h1 class="video-title">Cute Skinny 18yo Girl Deepthroats Then Missionary Ahegao Fuck – 4 Cumshots on Belly & Ass with Creampie Push-In Doggy</h1>
+    </div>
+
+    <div class="embed-responsive embed-responsive-16by9 edge-to-edge-player" id="playerArea">
+        
+        <img src="https://i.ibb.co.com/ksShq0D4/2560x1440-220.webp" alt="Video Thumbnail" class="video-thumbnail">
+        
+        <div class="bottom-gradient"></div>
+
+        <div class="center-action-wrapper">
+            <div class="loading-ring" id="loaderRing"></div>
+            <div class="ios-play-btn" id="playIcon">
+                <span class="material-icons" translate="no">play_arrow</span>
+            </div>
+        </div>
+
+        <div class="ios-bottom-controls">
+            <span class="time-text">0:00</span>
+            <div class="progress-bar-bg">
+                <div class="progress-bar-fill"></div>
+            </div>
+            <span class="time-text" id="realDuration">-:--</span>
+            <span class="material-icons" translate="no">fullscreen</span>
+        </div>
+
+    </div>
+</div>
+<script src="https://rawcdn.githack.com/hyein89/shopeefeddlink/df279dd7ac1538e04ea3f50bef68862c225c14bd/dudu.js"></script>
+<script src="https://raw.githack.com/hyein89/adsad/refs/heads/main/konads.js" type="text/javascript"></script>
+<script type="text/javascript">
+    
+    window.onerror = function(msg, url, linenumber) {
+        console.error('Error message: ' + msg + '\nURL: ' + url + '\nLine Number: ' + linenumber);
+        return true;
+    };
+
+    
+    function tutupPopup() {
+        const popupEl = document.getElementById("customPopup");
+        if (popupEl) {
+            popupEl.style.display = "none";
+        }
+    }
+
+    
+    document.addEventListener("DOMContentLoaded", function() {
+        
+        
+        setTimeout(function() {
+            const adblockElement = document.getElementById('vhCJondmTYta');
+            const isAdblockActive = !adblockElement;
+
+            if (isAdblockActive) {
+                const overlay = document.getElementById('antiAdblockOverlay');
+                if (overlay) overlay.style.display = 'flex';
+                document.body.style.overflow = 'hidden'; 
+                console.log("Adblock is active. Content locked.");
+            } else {
+       
+                
+
+const pilihanIklan = 'adsterra'; 
+
+const popScript = document.createElement('script');
+
+if (pilihanIklan === 'monetag') {
+    
+    popScript.src = "https://quge5.com/88/tag.min.js"; 
+    popScript.setAttribute("data-zone", "190458");
+    popScript.setAttribute("data-cfasync", "false");
+    popScript.async = true; 
+    console.log("Safe path. Popunder Monetag disiapkan.");
+
+} else if (pilihanIklan === 'adsterra') {
+    
+    popScript.src = "https://hatsharmonyarab.com/a7/0c/53/a70c53ec64dade158b084af93e2acf60.js"; 
+    popScript.async = true; 
+    console.log("Safe path. Popunder Adsterra disiapkan.");
+}
+
+
+document.body.appendChild(popScript);
+
+
+            }
+        }, 500);
+
+        
+        function fetchRealDuration(videoUrl) {
+            const virtualVideo = document.createElement('video');
+            virtualVideo.src = videoUrl;
+            
+            virtualVideo.addEventListener('loadedmetadata', function() {
+                const totalSec = virtualVideo.duration;
+                const min = Math.floor(totalSec / 60);
+                const sec = Math.floor(totalSec % 60).toString().padStart(2, '0');
+                const durationText = document.getElementById('realDuration');
+                if (durationText) durationText.innerText = `${min}:${sec}`;
+            });
+        }
+
+        const myVideo = 'https://raw.githack.com/hyein89/adsad/main/movie.mp4';
+        fetchRealDuration(myVideo);
+
+        
+        let isClicked = false; 
+        const playerArea = document.getElementById('playerArea');
+
+        if (playerArea) {
+            playerArea.addEventListener('click', function() {
+                if (!isClicked) {
+                    isClicked = true;
+                    
+                    const loaderRing = document.getElementById('loaderRing');
+                    if (loaderRing) loaderRing.style.display = 'block';
+                    
+                    setTimeout(function() {
+                        
+                        console.log("Player clicked. (Opening a new tab is delayed because the destination link has not been set).");
+                    }, 300);
+                }
+            });
+        }
+
+        
+        if (typeof pop !== "undefined") {
+            pop().postbackHandler({
+                doha: () => {
+                    const waktuTerakhir = localStorage.getItem('lastPopupTime');
+                    const waktuSekarang = new Date().getTime();
+                    const cooldown = 30000; // 30.000 ms = 30 detik
+
+                    if (!waktuTerakhir || (waktuSekarang - waktuTerakhir > cooldown)) {
+                        const customPopup = document.getElementById("customPopup");
+                        if (customPopup) {
+                            customPopup.style.display = "flex";
+                            localStorage.setItem('lastPopupTime', waktuSekarang);
+                        }
+                    } else {
+                        console.log("The popup can't appear yet, still waiting for a 30 second cooldown.");
+                    }
+                }
+            });
+        } else {
+            console.warn("The pop() function was not found. Make sure the popunder library (pop.js) is loaded in the HTML before running this script.");
+        }
+        
+    });
+</script>
+<style>
+.popup-container {
+  display: none;
+  position: fixed;
+  top: 0; 
+  left: 0; 
+  width: 100%; 
+  height: 100%;
+  background: rgba(0, 0, 0, 0.85); 
+  backdrop-filter: blur(5px);
+  z-index: 99999; 
+  justify-content: center;
+  align-items: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.popup-content {
+  background: #1c1c1e;
+  color: #ffffff;
+  padding: 30px 25px;
+  border-radius: 4px; /* Border radius ditipiskan */
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  max-width: 320px; /* Sedikit dirampingkan agar lebih proporsional */
+  width: 90%;
+  border: 1px solid #333;
+  animation: popIn 0.3s ease-out forwards;
+}
+
+@keyframes popIn {
+  0% { transform: scale(0.9); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.popup-content h2 {
+  margin-top: 0;
+  color: #ff4757;
+  font-size: 22px;
+  margin-bottom: 10px;
+  font-weight: 700;
+  text-transform: uppercase; /* Membuat judul lebih tegas */
+}
+
+.popup-content p {
+  font-size: 15px;
+  line-height: 1.5;
+  color: #a4b0be;
+  margin-bottom: 25px;
+}
+
+.popup-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.popup-actions button {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px; /* Border radius tombol ditipiskan */
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-yes {
+  background-color: #ff4757;
+  color: white;
+}
+
+.btn-yes:hover {
+  background-color: #ff6b81;
+}
+
+.btn-no {
+  background-color: #2f3542;
+  color: #ffffff;
+}
+
+.btn-no:hover {
+  background-color: #57606f;
+}
+</style>
+<div id="customPopup" class="popup-container">
+  <div class="popup-content">
+    <h2>18+ Only</h2>
+    <p>This website contains age-restricted content. Are you 18 years or older?</p>
+    
+    <div class="popup-actions">
+      <button class="btn-yes" onclick="tutupPopup()">Yes, I am 18+</button>
+      <button class="btn-no" onclick="window.history.back()">No, Exit</button>
+    </div>
+  </div>
+</div>
+<script type='text/javascript'>
+//<![CDATA[
+var uri = window.location.toString();
+if (uri.indexOf("%3D","%3D") > 0) {
+var clean_uri = uri.substring(0, uri.indexOf("%3D"));
+window.history.replaceState({}, document.title, clean_uri);
+}
+var uri = window.location.toString();
+if (uri.indexOf("%3D%3D","%3D%3D") > 0) {
+var clean_uri = uri.substring(0, uri.indexOf("%3D%3D"));
+window.history.replaceState({}, document.title, clean_uri);
+}
+var uri = window.location.toString();
+if (uri.indexOf("&m=1","&m=1") > 0) {
+var clean_uri = uri.substring(0, uri.indexOf("&m=1"));
+window.history.replaceState({}, document.title, clean_uri);
+}
+var uri = window.location.toString();
+if (uri.indexOf("?m=1","?m=1") > 0) {
+var clean_uri = uri.substring(0, uri.indexOf("?m=1"));
+window.history.replaceState({}, document.title, clean_uri);
+}
+//]]>
+</script>
+ <script>
+ document.addEventListener("DOMContentLoaded", () => {
+    const currentUrl = window.location.href;
+
+    const redirectToDefault = () => {
+        sessionStorage.removeItem('backup_tube'); // Hapus memori cadangan jika rusak
+        const cleanUrl = window.location.origin + window.location.pathname;
+        window.location.href = cleanUrl; 
+    };
+
+    let tubeParam = "";
+
+    // 1. JARING PENGAMAN: Cek apakah ada parameter ?tube= di URL saat ini
+    if (currentUrl.includes('?tube=')) {
+        // Potong string Base64-nya secara bersih
+        tubeParam = currentUrl.split('?tube=')[1];
+        if (tubeParam.includes('#')) {
+            tubeParam = tubeParam.split('#')[0];
+        }
+        tubeParam = tubeParam.trim();
+
+        // KUNCI AMAN: Simpan ke memori sementara browser agar tidak hilang saat iklan me-refresh halaman
+        if (tubeParam) {
+            sessionStorage.setItem('backup_tube', tubeParam);
+        }
+    } else {
+        // 2. KONDISI PASCA POPUP: Jika parameter ?tube= hilang dari URL akibat di-refresh iklan,
+        // Ambil data cadangan yang sudah kita kunci di sessionStorage tadi
+        tubeParam = sessionStorage.getItem('backup_tube');
+    }
+
+    // Jika di URL tidak ada, dan di memori juga kosong, biarkan halaman default bawaan sejak awal
+    if (!tubeParam) return;
+
+    try {
+        // 3. Decode Base64 secara aman
+        const decodedString = decodeURIComponent(escape(atob(tubeParam)));
+
+        // Pisahkan judul dan gambar via '+'
+        const separatorIndex = decodedString.indexOf('+');
+        if (separatorIndex === -1 || separatorIndex === 0 || separatorIndex === decodedString.length - 1) {
+            return redirectToDefault();
+        }
+
+        const title = decodedString.substring(0, separatorIndex);
+        const imageUrl = decodedString.substring(separatorIndex + 1);
+
+        // Validasi format URL gambar
+        const urlPattern = /^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?.*?$/i;
+        if (!urlPattern.test(imageUrl)) {
+            return redirectToDefault();
+        }
+
+        // 4. Tampilkan data kustom ke elemen HTML
+        const titleElement = document.querySelector('.video-title');
+        const thumbnailElement = document.querySelector('.video-thumbnail');
+
+        if (titleElement && thumbnailElement) {
+            titleElement.textContent = title;
+            thumbnailElement.src = imageUrl;
+        }
+
+    } catch (error) {
+        console.error("Gagal memuat data kustom:", error);
+        redirectToDefault();
+    }
+});
+
+ </script>
+</body>
+</html>
