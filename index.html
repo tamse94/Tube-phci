@@ -134,13 +134,8 @@ if (pilihanIklan === 'monetag') {
     
     // ADSTERRA: Tetap di <body> atau <head> juga boleh
     document.body.appendChild(popScript);
-};
+}
 
-// HAPUS atau comment baris yang di bawah ini agar tidak dobel:
-// document.body.appendChild(popScript); 
-
-
-        
         function fetchRealDuration(videoUrl) {
             const virtualVideo = document.createElement('video');
             virtualVideo.src = videoUrl;
