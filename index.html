@@ -15,6 +15,20 @@
 <link rel="canonical" href="https://komvbgh.eu.org" />
 <link href="style.css" rel="stylesheet">
 <style>
+ body {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+img {
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+  pointer-events: none;
+}
   .lolimg{
    display :none;
   }
@@ -298,7 +312,7 @@ document.body.appendChild(popScript);
 
 <script src="js.js"></script>
 <script>
-  document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", () => {
   const lazyImages = document.querySelectorAll("img[data-src], img[data-srcset], source[data-srcset]");
 
   if ("IntersectionObserver" in window) {
@@ -325,6 +339,25 @@ document.body.appendChild(popScript);
       if (target.dataset.srcset) target.srcset = target.dataset.srcset;
     });
   }
+
+  document.addEventListener("contextmenu", (e) => {
+    e.preventDefault();
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (
+      e.ctrlKey && 
+      (e.key === "c" || e.key === "v" || e.key === "u" || e.key === "s" || e.key === "p" || e.shiftKey && e.key === "I")
+    ) {
+      e.preventDefault();
+    }
+  });
+
+  document.querySelectorAll("img").forEach((img) => {
+    img.addEventListener("dragstart", (e) => {
+      e.preventDefault();
+    });
+  });
 });
 
 </script>
