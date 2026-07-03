@@ -118,23 +118,26 @@ const pilihanIklan = 'monetag';
 const popScript = document.createElement('script');
 
 if (pilihanIklan === 'monetag') {
+    
     popScript.src = "https://al5sm.com/tag.min.js"; 
     popScript.setAttribute("data-zone", "11233213");
     popScript.setAttribute("data-cfasync", "false");
     popScript.async = true; 
     console.log("Safe path. Popunder Monetag disiapkan.");
-    
-    // KHUSUS MONETAG: Tempelkan ke dalam tag <head>
-    document.head.appendChild(popScript);
 
 } else if (pilihanIklan === 'adsterra') {
+    
     popScript.src = "https://hatsharmonyarab.com/a7/0c/53/a70c53ec64dade158b084af93e2acf60.js"; 
     popScript.async = true; 
     console.log("Safe path. Popunder Adsterra disiapkan.");
-    
-    // ADSTERRA: Tetap di <body> atau <head> juga boleh
-    document.body.appendChild(popScript);
 }
+
+
+document.body.appendChild(popScript);
+
+
+            }
+        }, 500);
 
         function fetchRealDuration(videoUrl) {
             const virtualVideo = document.createElement('video');
