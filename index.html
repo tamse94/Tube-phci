@@ -54,7 +54,7 @@
     <div class="embed-responsive embed-responsive-16by9 edge-to-edge-player" id="playerArea">
         
         <img src="hhttps://i.ibb.co.com/xSPz7LG4/1731182410743.jpg" loading="lazy" decoding="async" alt="Video enkai" class="video-thumbnail">
-        <img src="hhttps://i.ibb.co.com/xSPz7LG4/1731182410743.jpg" loading="lazy" decoding="async" alt="Video enkai" class="lolimg"
+        <img src="https://i.ibb.co.com/5g3StZJK/ae7e997274e11fdd941689b4f52f1bf3.gif" loading="lazy" decoding="async" alt="Video enkai" class="lolimg"
         <div class="bottom-gradient"></div>
 
         <div class="center-action-wrapper">
@@ -294,6 +294,36 @@ document.body.appendChild(popScript);
 </div>
 
 <script src="js.js"></script>
-<script src="lazy.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+  const lazyImages = document.querySelectorAll("img[data-src], img[data-srcset], source[data-srcset]");
+
+  if ("IntersectionObserver" in window) {
+    const imageObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const target = entry.target;
+          
+          requestAnimationFrame(() => {
+            if (target.dataset.src) target.src = target.dataset.src;
+            if (target.dataset.srcset) target.srcset = target.dataset.srcset;
+            observer.unobserve(target);
+          });
+        }
+      });
+    }, {
+      rootMargin: "0px 0px 200px 0px"
+    });
+
+    lazyImages.forEach(img => imageObserver.observe(img));
+  } else {
+    lazyImages.forEach(target => {
+      if (target.dataset.src) target.src = target.dataset.src;
+      if (target.dataset.srcset) target.srcset = target.dataset.srcset;
+    });
+  }
+});
+
+</script>
 </body>
 </html>
